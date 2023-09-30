@@ -1,0 +1,45 @@
+.popular-films {
+    width: 100%;
+}
+
+.popular-films__wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content max-content;
+    gap: 30px;
+    overflow-x: hidden;
+}
+
+.popular-films__title {
+    color: var(--main-text-color);
+}
+
+.popular-films__slider {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.popular-films__list {
+    width: max-content;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.popular-films__item {
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    background-color: var(--surface);
+}
+
+.popular-films__item-title {
+    color: var(--main-text-color);
+}
+
+.popular-films__item-overvie {
+    color: var(--second-text-color);
+}
