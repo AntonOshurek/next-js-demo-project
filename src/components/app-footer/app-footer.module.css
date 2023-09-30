@@ -1,0 +1,40 @@
+.app-footer {
+	width: 100%;
+	background-color: var(--bg);
+
+	box-shadow: 0 -50px 100px rgba(136, 113, 249, 0.07);
+}
+
+.app-footer__wrap {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: 1fr min-content;
+	align-content: flex-start;
+	justify-content: flex-start;
+	grid-row-gap: 15px;
+
+	padding: 10px var(--standard-side-padding);
+}
+
+.app-footer__navigation {
+	grid-column: 1/2;
+	grid-row: 1/-1;
+}
+
+.app-footer__contact {
+	grid-row: 1/2;
+	grid-column: 2/-1;
+}
+
+.app-footer__copyright {
+	grid-row: 2/-1;
+	grid-column: 2/-1;
+	justify-self: flex-end;
+	width: max-content;
+
+	font-family: var(--basic-font);
+	font-size: var(--label-small-size);
+	font-weight: var(--label-small-weight);
+	line-height: var(--label-small-line-height);
+	color: var(--sub-text-color);
+}

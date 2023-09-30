@@ -1,0 +1,21 @@
+:root {
+	--primary: #03dac6;
+	--secondary: #6200ee;
+
+	--bg: #001424;
+	--second-bg: #001424;
+	--surface: #122840;
+	--surface-overlay: #284059;
+	--main-text-color: #ffffff;
+	--main-dark-text-color: #000000;
+	--second-text-color: #eeeeee;
+	--sub-text-color: #677f99;
+
+	/* links */
+	--link-hover-color: #0d6efd;
+	/* inputs */
+	--input-bg: #284059;
+	--input-focus-bg: #ffffff;
+	--input-text-color: #ffffff;
+	--input-focus-text-color: #000000;
+}

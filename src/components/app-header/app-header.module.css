@@ -1,0 +1,17 @@
+.app-header {
+	width: 100%;
+	padding: 10px var(--standard-side-padding);
+	display: grid;
+	grid-template-columns: max-content 1fr max-content max-content;
+	justify-items: flex-end;
+	align-items: center;
+	grid-column-gap: 10px;
+}
+
+.app-header__title {
+	font-family: var(--basic-font);
+	font-size: var(--heading-xxlarge-size);
+	font-weight: var(--heading-xxlarge-weight);
+	line-height: var(--heading-xxlarge-line-height);
+	color: var(--main-text-color);
+}
