@@ -20,8 +20,11 @@ const PopularFilms = async () => {
                             popularFilms.results.map((movie) => {
                                 return (
                                     <li className={style['popular-films__item']}>
-                                        <h3 className={style['popular-films__item-title']}>{movie.title}</h3>
-                                        {/* <p className={style['popular-films__item-overvie']}>{movie.overview}</p> */}
+                                        <div className={style['popular-films__item-info']}>
+                                            <h3 className={style['popular-films__item-title']}>{movie.title}</h3>
+                                            {/* <p className={style['popular-films__item-overvie']}>{movie.overview}</p> */}
+                                        </div>
+                                        <img className={style['popular-films__item-poster']} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} width={200} height={200} alt="" />
                                     </li>
                                 )
                             })
