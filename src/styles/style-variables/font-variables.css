@@ -1,0 +1,57 @@
+:root {
+	/* --basic-font: 'PT Sans', 'Arial', sans-serif; */
+
+	/* PARAGRAPH */
+	--paragraph-large-size: 18px;
+	--paragraph-medium-size: 16px;
+	--paragraph-small-size: 14px;
+	--paragraph-xsmal-size: 12px;
+
+	--paragraph-large-weight: 400;
+	--paragraph-medium-weight: 400;
+	--paragraph-small-weight: 400;
+	--paragraph-xsmal-weight: 400;
+
+	--paragraph-large-line-height: 28px;
+	--paragraph-medium-line-height: 24px;
+	--paragraph-small-line-height: 20px;
+	--paragraph-xsmal-line-height: 20px;
+
+	/* LABEL */
+	--label-large-size: 18px;
+	--label-medium-size: 16px;
+	--label-small-size: 14px;
+	--label-xsmal-size: 12px;
+
+	--label-large-weight: 500;
+	--label-medium-weight: 500;
+	--label-small-weight: 500;
+	--label-xsmal-weight: 500;
+
+	--label-large-line-height: 24px;
+	--label-medium-line-height: 20px;
+	--label-small-line-height: 16px;
+	--label-xsmal-line-height: 16px;
+
+	/* HEADING */
+	--heading-xxlarge-size: 40px;
+	--heading-xlarge-size: 36px;
+	--heading-large-size: 32px;
+	--heading-medium-size: 28px;
+	--heading-small-size: 24px;
+	--heading-xsmall-size: 20px;
+
+	--heading-xxlarge-weight: 700;
+	--heading-xlarge-weight: 700;
+	--heading-large-weight: 700;
+	--heading-medium-weight: 700;
+	--heading-small-weight: 700;
+	--heading-xsmall-weight: 700;
+
+	--heading-xxlarge-line-height: 52px;
+	--heading-xlarge-line-height: 44px;
+	--heading-large-line-height: 40px;
+	--heading-medium-line-height: 36px;
+	--heading-small-line-height: 32px;
+	--heading-xsmall-line-height: 28px;
+}

@@ -1,0 +1,22 @@
+.footer-contact {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	gap: 20px;
+}
+
+.footer-contact__link {
+	width: max-content;
+
+	font-family: var(--basic-font);
+	font-size: var(--label-small-size);
+	font-weight: var(--label-small-weight);
+	line-height: var(--label-small-line-height);
+	color: var(--sub-text-color);
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.footer-contact__link:hover {
+	color: var(--link-hover-color);
+}
