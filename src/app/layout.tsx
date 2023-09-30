@@ -5,7 +5,6 @@ import { AppHeader, AppFooter } from '@/components/';
 import { PT_Sans } from 'next/font/google';
 /* STYLES */
 import style from './styles/styles.module.css';
-/* styles */
 import '@/styles/global-styles/globals.css';
 import '@/styles/style-variables/color-variables.css';
 import '@/styles/style-variables/width-variables.css';
