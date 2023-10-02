@@ -1,19 +1,38 @@
-import { API } from "@/variables/api";
+import type IcurrentMovie from '@/types/movie/current-movie';
 
 class FilmsApi {
-    
-    constructor() {
-        
-    };
 
-    async moviePopular(lang: string, page: number) {
-        const options = {
-            method: 'GET',
-        };
+	constructor() {
 
-        const res = await fetch(API.movie.popular, options)
-        return res.json();
-    };
+	};
+
+	async moviePopular(lang: string, page: number) {
+		const options = {
+			method: 'GET',
+			headers: {
+				accept: 'application/json',
+			}
+		};
+
+		const requestpath = `${process.env.BASE_URL}popular?api_key=${process.env.API_KEY}`;
+
+		const res = await fetch(requestpath, options)
+		return res.json();
+	};
+
+	async getMovieWithId(lang: string, movieId: number): Promise<IcurrentMovie | null> {
+		const options = {
+			method: 'GET',
+			headers: {
+				accept: 'application/json',
+			}
+		};
+
+		const requestpath = `${process.env.BASE_URL}${movieId}?language=en-US&api_key=${process.env.API_KEY}`;
+		const res = await fetch(
+			requestpath, options)
+		return res.json();
+	};
 };
 
 const filmsApi = new FilmsApi();
