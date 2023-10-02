@@ -1,4 +1,3 @@
-import { API } from "@/variables/api";
 import type IcurrentMovie from '@/types/movie/current-movie';
 
 class FilmsApi {
@@ -10,22 +9,28 @@ class FilmsApi {
 	async moviePopular(lang: string, page: number) {
 		const options = {
 			method: 'GET',
+			headers: {
+				accept: 'application/json',
+			}
 		};
 
-		const res = await fetch(API.movie.popular, options)
+		const requestpath = `${process.env.BASE_URL}popular?api_key=${process.env.API_KEY}`;
+
+		const res = await fetch(requestpath, options)
 		return res.json();
 	};
 
 	async getMovieWithId(lang: string, movieId: number): Promise<IcurrentMovie | null> {
 		const options = {
 			method: 'GET',
+			headers: {
+				accept: 'application/json',
+			}
 		};
-		console.log('run')
 
-		const requestpath = `${API.movie.current}&movie_id=${movieId}`;
-		console.log(requestpath)
-
-		const res = await fetch(requestpath, options)
+		const requestpath = `${process.env.BASE_URL}${movieId}?language=en-US&api_key=${process.env.API_KEY}`;
+		const res = await fetch(
+			requestpath, options)
 		return res.json();
 	};
 };

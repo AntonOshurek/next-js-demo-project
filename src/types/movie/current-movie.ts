@@ -6,7 +6,7 @@ interface IcurrentMovie {
 		name: string;
 		poster_path: string;
 		backdrop_path: string;
-	};
+	} | null;
 	budget: number;
 	genres: {
 		id: number;
