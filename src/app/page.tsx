@@ -4,9 +4,9 @@ import { PopularFilms } from "@/components"
 import style from './styles/styles.module.css';
 
 export default function Home() {
-  return (
-    <div className={style['app']}>
-      <PopularFilms/>
-    </div>
-  )
+	return (
+		<div className={style['app']}>
+			<PopularFilms />
+		</div>
+	)
 }

@@ -25,15 +25,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className={ptSans.className}>
-      <body className={`${style['body']}`}>
-        <AppHeader/>
-        <main className={`${style['main']}`}>
-          {children}
-        </main>  
-        <AppFooter/>
-      </body>
-    </html>
-  )
+	return (
+		<html lang="en" className={ptSans.className}>
+			<body className={`${style['body']}`}>
+				<AppHeader />
+				<main className={`${style['main']}`}>
+					{children}
+				</main>
+				<AppFooter />
+			</body>
+		</html>
+	)
 }

@@ -11,7 +11,7 @@ const PopularFilms = async () => {
 
 	return (
 		<section className={style['popular-films']}>
-			<div className={style['popular-films__wrap']}>
+			<div className={`${style['popular-films__wrap']} container`}>
 				<h2 className={style['popular-films__title']}>Popular movies</h2>
 
 
@@ -26,7 +26,7 @@ const PopularFilms = async () => {
 											{/* <p className={style['popular-films__item-overvie']}>{movie.overview}</p> */}
 										</div>
 										<img className={style['popular-films__item-poster']} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} width={200} height={200} alt="" />
-										<Link href={`/movie/${movie.id}`}>
+										<Link className={style['popular-films__litem-link']} href={`/movie/${movie.id}`}>
 											<span className='visually-hidden'>link to ${movie.original_title} movie</span>
 										</Link>
 									</li>
