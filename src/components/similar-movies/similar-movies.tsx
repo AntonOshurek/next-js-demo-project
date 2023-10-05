@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 /* API */
 import filmsApi from '@/api/films-api';
 /* STYLES */
@@ -7,20 +9,37 @@ const SimilarMovies = async ({ filmId }: { filmId: number }) => {
 	const similarMovies = await filmsApi.getSimilarFilms('en', filmId);
 
 	return (
-		<section>
-			<h3>Similar movies</h3>
-			<p>{filmId}</p>
+		<section className={style['similar-movies']}>
+			<h3 className={`${style['similar-movies__title']} container`}>Similar movies</h3>
 
-			{
-				similarMovies?.results.map((similar) => {
-					return (
-						<div key={similar.id}>
-							<h4>{similar.title}</h4>
-							<p>{similar.poster_path}</p>
-						</div>
-					)
-				})
-			}
+			<div className={`${style['similar-movies__wrap']} container`}>
+				<ul className={style['similar-movies-list']}>
+					{
+						similarMovies?.results.map((similar) => {
+							return (
+								<li className={style['similar-movies-list__item']} key={similar.id}>
+									<div className={`${style['similar-movies-list__info']}`}>
+										<h4>{similar.title}</h4>
+									</div>
+
+									<Image
+										className={style['similar-movies-list__poster-backdrop']}
+										src={`https://image.tmdb.org/t/p/original${similar.poster_path}`}
+										width={500}
+										height={300}
+										alt=""
+									/>
+
+									<Link className={style['similar-movies-list__item-link']} href={`/movie/${similar.id}`}>
+										<span className='visually-hidden'>link to ${similar.original_title} movie</span>
+									</Link>
+								</li>
+							)
+						})
+					}
+				</ul>
+			</div>
+
 		</section>
 	)
 }

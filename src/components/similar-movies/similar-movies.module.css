@@ -1,0 +1,64 @@
+.similar-movies {
+	width: 100%;
+	padding: 100px var(--standard-side-padding);
+}
+
+.similar-movies__title {
+	color: var(--main-text-color);
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.similar-movies__wrap {
+	overflow: hidden;
+}
+
+.similar-movies-list {
+	width: 100%;
+	overflow-x: auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 20px 0;
+	gap: 30px;
+	list-style: none;
+}
+
+.similar-movies-list__item {
+	position: relative;
+	color: var(--main-text-color);
+	min-width: 262px;
+	height: 450px;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+}
+
+.similar-movies-list__info {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: max-content;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.similar-movies-list__poster-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 262px;
+	height: 450px;
+	display: flex;
+	object-fit: cover;
+}
+
+.similar-movies-list__item-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+
+}

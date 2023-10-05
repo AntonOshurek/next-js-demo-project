@@ -39,4 +39,5 @@
 .movie__info {
 	padding: 40px 0;
 	grid-column: 2/-1;
+	min-height: calc(460px / 2);
 }

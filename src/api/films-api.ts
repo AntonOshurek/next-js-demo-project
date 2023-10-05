@@ -29,7 +29,7 @@ class FilmsApi {
 			}
 		};
 
-		const requestpath = `${process.env.BASE_URL}${movieId}?language=en-US&api_key=${process.env.API_KEY}`;
+		const requestpath = `${process.env.BASE_URL}${movieId}?language=ru-RU&api_key=${process.env.API_KEY}`;
 
 		const res = await fetch(
 			requestpath, options)
@@ -44,7 +44,7 @@ class FilmsApi {
 			}
 		};
 
-		const requestpath = `${process.env.BASE_URL}${movieId}/similar?api_key=${process.env.API_KEY}&language=en-US`;
+		const requestpath = `${process.env.BASE_URL}${movieId}/similar?api_key=${process.env.API_KEY}&language=ru-RU`;
 		console.log(requestpath)
 		const res = await fetch(
 			requestpath, options)
