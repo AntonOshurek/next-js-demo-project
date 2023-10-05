@@ -1,4 +1,5 @@
 import type IcurrentMovie from '@/types/movie/current-movie';
+import type { ISimilarMovies } from '@/types/movie/similar';
 
 class FilmsApi {
 
@@ -29,6 +30,22 @@ class FilmsApi {
 		};
 
 		const requestpath = `${process.env.BASE_URL}${movieId}?language=en-US&api_key=${process.env.API_KEY}`;
+
+		const res = await fetch(
+			requestpath, options)
+		return res.json();
+	};
+
+	async getSimilarFilms(lang: string, movieId: number): Promise<ISimilarMovies | null> {
+		const options = {
+			method: 'GET',
+			headers: {
+				accept: 'application/json',
+			}
+		};
+
+		const requestpath = `${process.env.BASE_URL}${movieId}/similar?api_key=${process.env.API_KEY}&language=en-US`;
+		console.log(requestpath)
 		const res = await fetch(
 			requestpath, options)
 		return res.json();

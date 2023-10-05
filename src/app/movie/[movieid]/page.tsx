@@ -1,6 +1,8 @@
 import Image from 'next/image';
 /* API */
 import filmsApi from '@/api/films-api';
+/* COMPONENTS */
+import SimilarMovies from '@/components/similar-movies/similar-movies';
 /* STYLES */
 import style from './style.module.css';
 
@@ -42,6 +44,8 @@ const Movie = async ({ params }: { params: { movieid: string } }) => {
 					/>
 				</div>
 			</div>
+
+			<SimilarMovies filmId={+params.movieid} />
 		</section>
 	);
 };
