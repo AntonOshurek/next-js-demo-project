@@ -41,3 +41,13 @@
 	grid-column: 2/-1;
 	min-height: calc(460px / 2);
 }
+
+.loading {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-weight: 500;
+	color: var(--primary);
+}
