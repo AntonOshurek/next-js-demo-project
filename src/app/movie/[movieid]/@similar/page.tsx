@@ -5,8 +5,8 @@ import filmsApi from '@/api/films-api';
 /* STYLES */
 import style from './similar-movies.module.css';
 
-const SimilarMovies = async ({ filmId }: { filmId: number }) => {
-	const similarMovies = await filmsApi.getSimilarFilms('en', filmId);
+const Similar = async ({ params }: { params: { movieid: string } }) => {
+	const similarMovies = await filmsApi.getSimilarFilms('en', +params.movieid);
 
 
 	return (
@@ -49,4 +49,4 @@ const SimilarMovies = async ({ filmId }: { filmId: number }) => {
 	)
 }
 
-export default SimilarMovies;
+export default Similar;
