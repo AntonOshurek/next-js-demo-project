@@ -28,7 +28,6 @@ const Movie = async ({ params }: { params: { movieid: string } }) => {
 						</h3>
 
 						<p>
-							overview:
 							{currentMovie?.overview}
 						</p>
 					</div>
