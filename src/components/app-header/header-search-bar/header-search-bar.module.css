@@ -1,4 +1,8 @@
 .header-search-bar {
+	position: relative;
+}
+
+.header-search-bar__label {
 	width: 100%;
 	min-width: 280px;
 	height: 100%;
@@ -27,4 +31,33 @@
 .header-search-bar__search-field:focus {
 	background-color: var(--input-focus-bg);
 	color: var(--input-focus-text-color);
+}
+
+.header-search-bar__search-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 300px;
+	background-color: rgba(235, 235, 235, 0.8);
+	color: var(--input-text-color);
+	padding: 10px;
+	border-radius: 10px;
+	z-index: 10;
+}
+
+.header-search-bar__search-list-item {
+	list-style: none;
+	display: flex;
+}
+
+.header-search-bar__search-list-link {
+	color: var(--secondary);
+	text-decoration: none;
+	padding: 5px 0;
+	font-size: 16px;
+	width: 100%;
+}
+
+.header-search-bar__search-list-link:hover {
+	text-decoration: underline;
 }

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 export const generateMetadata = async ({ params }: { params: { movieid: string } }): Promise<Metadata> => {
 	const currentMovie = await filmsApi.getMovieWithId('eng', +params.movieid);
-	console.log('get data for layout')
+
 	return {
 		title: currentMovie?.original_title,
 		description: 'test',

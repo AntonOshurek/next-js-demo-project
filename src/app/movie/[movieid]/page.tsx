@@ -5,8 +5,8 @@ import filmsApi from '@/api/films-api';
 import style from './style.module.css';
 
 const Movie = async ({ params }: { params: { movieid: string } }) => {
-	console.log('get data for page')
 	const currentMovie = await filmsApi.getMovieWithId('eng', +params.movieid);
+
 	return (
 		<section className={style['movie']}>
 			<div className={`${style['movie__wrap']} container`}>
@@ -28,7 +28,6 @@ const Movie = async ({ params }: { params: { movieid: string } }) => {
 						</h3>
 
 						<p>
-							overview:
 							{currentMovie?.overview}
 						</p>
 					</div>
