@@ -61,3 +61,7 @@
 .header-search-bar__search-list-link:hover {
 	text-decoration: underline;
 }
+
+.header-search-bar__search-without-result {
+	color: var(--secondary);
+}
