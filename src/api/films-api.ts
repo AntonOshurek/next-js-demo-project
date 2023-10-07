@@ -45,7 +45,6 @@ class FilmsApi {
 		};
 
 		const requestpath = `${process.env.BASE_URL}${movieId}/similar?api_key=${process.env.API_KEY}&language=ru-RU`;
-		console.log(requestpath)
 		const res = await fetch(
 			requestpath, options)
 		return res.json();
