@@ -68,16 +68,17 @@
 }
 
 .pagintaion__list-item {
-	border: 2px solid transparent;
+	border: 3px solid transparent;
+	border-radius: 10px;
 }
 
 .pagintaion__list-item:hover {
-	border: 2px solid #8136e4;
+	border: 3px solid var(--secondary);
 }
 
 .pagintaion__list-item--active {
 	pointer-events: none;
-	border: 2px solid #8136e4;
+	border: 3px solid var(--primary);
 }
 
 .pagintaion__list-link {
