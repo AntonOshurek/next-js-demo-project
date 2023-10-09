@@ -1,5 +1,5 @@
 'use client'
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
 import filmsApi from '@/api/films-api';
 import type { IMovieInSearch } from '@/types/movie/search';
 /* styles */
@@ -13,6 +13,12 @@ const HeaderSearchBar = () => {
 	const searchInputHandler = (evt: ChangeEvent<HTMLInputElement>) => {
 		setSearchText(evt.target.value);
 	};
+
+	const onSearchKeydownHandler = (evt: KeyboardEvent<HTMLInputElement>) => {
+		if (evt.key === "Enter") {
+			console.log('enter')
+		}
+	}
 
 	useEffect(() => {
 		if (searchText.length > 0) {
@@ -41,6 +47,7 @@ const HeaderSearchBar = () => {
 			<label className={`${style['header-search-bar__label']}`}>
 				<span className="visually-hidden">search your film here</span>
 				<input
+					onKeyDown={onSearchKeydownHandler}
 					onChange={searchInputHandler}
 					value={searchText}
 					className={`${style['header-search-bar__search-field']}`}
