@@ -1,4 +1,5 @@
 'use client'
+import { redirect } from 'next/navigation'
 import { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
 import filmsApi from '@/api/films-api';
 import type { IMovieInSearch } from '@/types/movie/search';
@@ -9,6 +10,7 @@ import Link from 'next/link';
 const HeaderSearchBar = () => {
 	const [searchText, setSearchText] = useState<string>('');
 	const [searchResult, setSearchResult] = useState<IMovieInSearch[] | null>(null);
+	const [redyForRedirect, setRedyForRedirect] = useState<boolean>(false);
 
 	const searchInputHandler = (evt: ChangeEvent<HTMLInputElement>) => {
 		setSearchText(evt.target.value);
@@ -16,13 +18,28 @@ const HeaderSearchBar = () => {
 
 	const onSearchKeydownHandler = (evt: KeyboardEvent<HTMLInputElement>) => {
 		if (evt.key === "Enter") {
-			console.log('enter')
-		}
+			setRedyForRedirect(true)
+		};
+	};
+
+	const linkHandler = () => {
+		setSearchResult(null);
+	}
+
+	const optimyzeSearchString = (str: string): string => {
+		const queryOptimizeString = str.split(' ').join('+');
+		return queryOptimizeString;
 	}
 
 	useEffect(() => {
+		if (redyForRedirect) {
+			redirect(`/search/${optimyzeSearchString(searchText)}`);
+		}
+	}, [redyForRedirect]);
+
+	useEffect(() => {
 		if (searchText.length > 0) {
-			filmsApi.searchMulti(searchText)
+			filmsApi.searchMulti(optimyzeSearchString(searchText))
 				.then((res) => {
 					if (res?.results) {
 						setSearchResult(res.results);
@@ -37,10 +54,6 @@ const HeaderSearchBar = () => {
 			setSearchResult(null);
 		}
 	}, [searchText]);
-
-	const linkHandler = () => {
-		setSearchResult(null);
-	}
 
 	return (
 		<div className={`${style['header-search-bar']}`}>

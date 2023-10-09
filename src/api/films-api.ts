@@ -35,9 +35,7 @@ class FilmsApi {
 	};
 
 	async searchMulti(queryString: string): Promise<ISearchMulti | null> {
-		const queryOptimizeString = queryString.split(' ').join('+');
-
-		const requestpath = `https://api.themoviedb.org/3/search/movie?query=${queryOptimizeString}&api_key=c42a612fa11183223ab9f9e7502f8363&language=en-EN`;
+		const requestpath = `https://api.themoviedb.org/3/search/movie?query=${queryString}&api_key=c42a612fa11183223ab9f9e7502f8363&language=en-EN`;
 
 		const res = await fetch(
 			requestpath, this.options)
