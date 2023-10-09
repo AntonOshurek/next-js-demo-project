@@ -1,0 +1,92 @@
+.search {
+	color: var(--main-text-color);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 30px;
+}
+
+.search__list {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.popular-films__item {
+	position: relative;
+	height: 300px;
+	width: 200px;
+	background-color: var(--surface);
+}
+
+.popular-films__item-info {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	padding: 20px;
+}
+
+.popular-films__item-title {
+	color: var(--main-text-color);
+}
+
+.popular-films__item-overvie {
+	color: var(--second-text-color);
+}
+
+.popular-films__item-poster {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.popular-films__litem-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.pagination {
+	width: 100%;
+}
+
+.pagintaion__list {
+	width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}
+
+.pagintaion__list-item {
+	border: 2px solid transparent;
+}
+
+.pagintaion__list-item:hover {
+	border: 2px solid #8136e4;
+}
+
+.pagintaion__list-item--active {
+	pointer-events: none;
+	border: 2px solid #8136e4;
+}
+
+.pagintaion__list-link {
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
