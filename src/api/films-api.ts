@@ -34,9 +34,8 @@ class FilmsApi {
 		return res.json();
 	};
 
-	async searchMulti(queryString: string): Promise<ISearchMulti | null> {
-		const requestpath = `https://api.themoviedb.org/3/search/movie?query=${queryString}&api_key=c42a612fa11183223ab9f9e7502f8363&language=en-EN`;
-
+	async searchMulti(queryString: string, page = 1): Promise<ISearchMulti | null> {
+		const requestpath = `https://api.themoviedb.org/3/search/movie?query=${queryString}&api_key=c42a612fa11183223ab9f9e7502f8363&language=en-EN&page=${page}`;
 		const res = await fetch(
 			requestpath, this.options)
 		return res.json();

@@ -3,7 +3,15 @@ import style from './style.module.css';
 import Link from 'next/link';
 
 const Search = async ({ params }: { params: { slug: string } }) => {
-	const searchFilms = await filmsApi.searchMulti(params.slug);
+	let searchFilms = await filmsApi.searchMulti(params.slug);
+
+	const slugs = params.slug.toString().replace(/%2B/g, '+').split(',');
+
+	if (slugs[1]) {
+		searchFilms = await filmsApi.searchMulti(slugs[0], +slugs[1]);
+	} else {
+		searchFilms = await filmsApi.searchMulti(slugs[0]);
+	}
 
 	return (
 		<section className={`${style['search']} container`}>
@@ -26,6 +34,28 @@ const Search = async ({ params }: { params: { slug: string } }) => {
 					})
 				}
 			</ul>
+
+			<div className={style['pagination']}>
+				<ul className={style['pagintaion__list']}>
+					{
+						searchFilms?.total_pages && Array(searchFilms.total_pages).fill(null).map((_, index) => {
+							let activeClass = ''
+							if (index + 1 === +slugs[1]) {
+								activeClass = style['pagintaion__list-item--active'];
+							};
+
+							return (
+								<li className={`${style['pagintaion__list-item']} ${activeClass}`} key={index}>
+									<Link className={style['pagintaion__list-link']} href={`/search/${slugs[0]}/${index + 1}`}>
+										{index + 1}
+									</Link>
+								</li>
+							)
+						})
+					}
+
+				</ul>
+			</div>
 		</section>
 	)
 }

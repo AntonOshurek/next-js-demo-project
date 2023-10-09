@@ -1,5 +1,8 @@
 .search {
 	color: var(--main-text-color);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 30px;
 }
 
 .search__list {
@@ -49,4 +52,41 @@
 	background-color: transparent;
 	cursor: pointer;
 	z-index: 1;
+}
+
+.pagination {
+	width: 100%;
+}
+
+.pagintaion__list {
+	width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}
+
+.pagintaion__list-item {
+	border: 2px solid transparent;
+}
+
+.pagintaion__list-item:hover {
+	border: 2px solid #8136e4;
+}
+
+.pagintaion__list-item--active {
+	pointer-events: none;
+	border: 2px solid #8136e4;
+}
+
+.pagintaion__list-link {
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
