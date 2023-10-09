@@ -38,9 +38,11 @@ const Search = async ({ params }: { params: { slug: string } }) => {
 			<div className={style['pagination']}>
 				<ul className={style['pagintaion__list']}>
 					{
-						searchFilms?.total_pages && Array(searchFilms.total_pages).fill(null).map((_, index) => {
+						searchFilms?.total_pages && Array(searchFilms.total_pages > 5 ? 5 : searchFilms.total_pages).fill(null).map((_, index) => {
 							let activeClass = ''
 							if (index + 1 === +slugs[1]) {
+								activeClass = style['pagintaion__list-item--active'];
+							} else if (!slugs[1] && index + 1 === 1) {
 								activeClass = style['pagintaion__list-item--active'];
 							};
 
